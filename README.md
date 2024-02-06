@@ -1,9 +1,8 @@
 # `svelte-sortablejs`
-[![npm](https://img.shields.io/npm/v/@jhubbardsf/svelte-sortablejs?style=flat-square)](https://www.npmjs.com/package/@jhubbardsf/svelte-sortablejs)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@jhubbardsf/svelte-sortablejs?style=flat-square)](https://www.npmjs.com/package/@jhubbardsf/svelte-sortablejs)
-![Netlify](https://img.shields.io/netlify/17ccb8e4-9fc6-4654-802b-688c7cd125c3?style=flat-square)
-[![GitHub last commit](https://img.shields.io/github/last-commit/jhubbardsf/svelte-sortablejs?style=flat-square)](https://github.com/jhubbardsf/svelte-sortablejs)
-<a href="https://www.buymeacoffee.com/jhubbard"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=jhubbard&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" height=20 /></a>
+[![npm](https://img.shields.io/npm/v/@sonderbase/svelte-sortablejs?style=flat-square)](https://www.npmjs.com/package/@sonderbase/svelte-sortablejs)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@sonderbase/svelte-sortablejs?style=flat-square)](https://www.npmjs.com/package/@sonderbase/svelte-sortablejs)
+[![GitHub last commit](https://img.shields.io/github/last-commit/sonderbase/svelte-sortablejs?style=flat-square)](https://github.com/sonderbase/svelte-sortablejs)
+
 
 Unofficial Svelte package for the SortableJS library.
 
@@ -15,11 +14,11 @@ See a live [`demo`](https://svelte-sortablejs.netlify.app/) on Netlify.
 
 1. Install with npm, pnpm, or yarn.
 
-    `npm i -D @jhubbardsf/svelte-sortablejs`
+    `npm i -D @sonderbase/svelte-sortablejs`
 
 2. Import SortableList from package.
 
-    `import { SortableList } from '@jhubbardsf/svelte-sortablejs'`;
+    `import { SortableList } from '@sonderbase/svelte-sortablejs'`;
 
 3. Use the SortableList component in your svelte file.
 
@@ -34,7 +33,7 @@ See a live [`demo`](https://svelte-sortablejs.netlify.app/) on Netlify.
 
 ## Example Use
 
-Look in [`src/routes/index.svelte`](https://github.com/jhubbardsf/svelte-sortablejs/blob/master/src/routes/index.svelte) to see Svelte implementations of the [`SortableJS`](https://sortablejs.github.io/Sortable/) examples.
+Look in [`src/routes/index.svelte`](https://github.com/sonderbase/svelte-sortablejs/blob/master/src/routes/+page.svelte) to see Svelte implementations of the [`SortableJS`](https://sortablejs.github.io/Sortable/) examples.
 
 
 ## SortableList Props
