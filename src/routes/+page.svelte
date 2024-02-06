@@ -1,12 +1,6 @@
 <script lang="ts">
-	import Slider from '@bulatdashiev/svelte-slider';
-	import { SortableList } from '$lib/index';
-	import { FontAwesomeIcon } from 'fontawesome-svelte';
-	import { library } from '@fortawesome/fontawesome-svg-core';
-	import { faArrowsAlt } from '@fortawesome/free-solid-svg-icons';
-
-	//@ts-expect-error FA Bug
-	library.add(faArrowsAlt);
+	import SortableList from '$lib/SortableList.svelte';
+	import { Move } from 'lucide-svelte'
 
 	type ItemList = { item: string; filtered?: boolean }[];
 	type SelectOption = { isHorizontal: boolean; text: 'horizontal' | 'vertical' };
@@ -42,7 +36,7 @@
 
 		<SortableList class="list-group col" animation={150} ghostClass="bg-info">
 			{#each exampleItems as item}
-				<div class="list-group-item">
+				<div class="list-group-item hover:cursor-grab">
 					{item}
 				</div>
 			{/each}
@@ -122,7 +116,7 @@
 		<SortableList class="list-group col" handle=".cursor-grab" animation={150}>
 			{#each exampleItems as item}
 				<div class="list-group-item">
-					<FontAwesomeIcon icon={faArrowsAlt} class="cursor-grab" />
+					<Move />
 					{item}
 				</div>
 			{/each}
@@ -150,7 +144,7 @@
 		<div class="-mb-4">
 			<h2 class="font-bold">Example 7 - Thresholds</h2>
 			Current Threshold: {sliderValue[0]}
-			<Slider min="0" max="1" step=".01" bind:value={sliderValue} />
+			<!-- <Slider min="0" max="1" step=".01" bind:value={sliderValue} /> -->
 			<div>
 				Invert Swap ({invertSwap}): <input type="checkbox" bind:checked={invertSwap} />
 			</div>
@@ -176,7 +170,7 @@
 				<div
 					class="{selected?.isHorizontal
 						? ''
-						: 'mx-auto'} h-[200px] w-[200px] border border-solid  mr-4 mt-4"
+						: 'mx-auto'} h-[200px] w-[200px] border border-solid mr-4 mt-4"
 				>
 					{#if !invertSwap}
 						<div class="bg-red-500 m-auto h-full" style="width: {boxWidth}px;" />
