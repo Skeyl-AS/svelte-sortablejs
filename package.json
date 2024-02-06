@@ -1,5 +1,5 @@
 {
-	"name": "@jhubbardsf/svelte-sortablejs",
+	"name": "@sonderbase/svelte-sortablejs",
 	"version": "2.0.0",
 	"author": "Sonderbase Technologies <admin@sonderbase.com>",
 	"description": "A Svelte wrapper for the Sortable.js library",

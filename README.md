@@ -1,58 +1,475 @@
-# create-svelte
+# `svelte-sortablejs`
+[![npm](https://img.shields.io/npm/v/@jhubbardsf/svelte-sortablejs?style=flat-square)](https://www.npmjs.com/package/@jhubbardsf/svelte-sortablejs)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@jhubbardsf/svelte-sortablejs?style=flat-square)](https://www.npmjs.com/package/@jhubbardsf/svelte-sortablejs)
+![Netlify](https://img.shields.io/netlify/17ccb8e4-9fc6-4654-802b-688c7cd125c3?style=flat-square)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jhubbardsf/svelte-sortablejs?style=flat-square)](https://github.com/jhubbardsf/svelte-sortablejs)
+<a href="https://www.buymeacoffee.com/jhubbard"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=jhubbard&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" height=20 /></a>
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Unofficial Svelte package for the SortableJS library.
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+## Demo
 
-## Creating a project
+See a live [`demo`](https://svelte-sortablejs.netlify.app/) on Netlify.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Quick Start
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+1. Install with npm, pnpm, or yarn.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+    `npm i -D @jhubbardsf/svelte-sortablejs`
 
-## Developing
+2. Import SortableList from package.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+    `import { SortableList } from '@jhubbardsf/svelte-sortablejs'`;
 
-```bash
-npm run dev
+3. Use the SortableList component in your svelte file.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+    ```Svelte
+    <SortableList>
+        <div> List Item 1 </div>
+        <div> List Item 2 </div>
+        <div> List Item 3 </div>
+    </SortableList>
+    ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
 
-## Building
+## Example Use
 
-To build your library:
+Look in [`src/routes/index.svelte`](https://github.com/jhubbardsf/svelte-sortablejs/blob/master/src/routes/index.svelte) to see Svelte implementations of the [`SortableJS`](https://sortablejs.github.io/Sortable/) examples.
 
-```bash
-npm run package
-```
 
-To create a production version of your showcase app:
+## SortableList Props
 
-```bash
-npm run build
-```
+Below is a list explaining the SortableList component parameters. All parameters are optional. Check out the official SortableJS [`github`](https://github.com/SortableJS/Sortable) for more in depth information on the parameters.
 
-You can preview the production build with `npm run preview`.
+<!-- Generated Text Below  -->
+---
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+#### `multiDragClass` option
 
-## Publishing
+Type: string
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+Default Value: null
 
-To publish your library to [npm](https://www.npmjs.com):
+Add a multiDrag class. Automatically mounts the multiDrag Plugin, sets it to true and sets fallbackTolerance to 3.
 
-```bash
-npm publish
-```
+---
+
+#### `swapClass` option
+
+Type: string
+
+Default Value: null
+
+Add a swap class. Automatically mounts the swap Plugin, sets it to true.
+
+---
+
+#### `group` option
+
+Type: string | GroupOptions
+
+Default Value:
+
+"name" OR { name: "...", pull: [true, false, 'clone', array], put: [true, false, array] }
+
+---
+
+#### `sort` option
+
+Type: boolean
+
+Default Value: true
+
+Sorting inside list
+
+---
+
+#### `disabled` option
+
+Type: boolean
+
+Default Value: false
+
+Disables the sortable if set to true.
+
+---
+
+#### `store` option
+
+Type: undefined
+
+Default Value:
+
+---
+
+#### `handle` option
+
+Type: string
+
+Default Value:
+
+Drag handle selector within list items
+
+---
+
+#### `swapThreshold` option
+
+Type: number
+
+Default Value: 1
+
+Threshold of the swap zone. Must be between 0 and 1.
+
+---
+
+#### `invertSwap` option
+
+Type: boolean
+
+Default Value: false
+
+Will always use inverted swap zone if set to true.
+
+---
+
+#### `invertedSwapThreshold` option
+
+Type: number
+
+Default Value:
+
+Threshold of the inverted swap zone (will be set to swapThreshold value by default).
+
+---
+
+#### `removeCloneOnHide` option
+
+Type: boolean
+
+Default Value: true
+
+Remove the clone element when it is not showing, rather than just hiding it
+
+---
+
+#### `ghostClass` option
+
+Type: string
+
+Default Value: "sortable-ghost"
+
+Class name for the drop placeholder.
+
+---
+
+#### `chosenClass` option
+
+Type: string
+
+Default Value: "sortable-chosen"
+
+Class name for the chosen item.
+
+---
+
+#### `dragClass` option
+
+Type: string
+
+Default Value: "sortable-drag"
+
+Class name for the dragging item.
+
+---
+
+#### `ignore` option
+
+Type: string
+
+Default Value: "a; img"
+
+Elements to ignore
+
+---
+
+#### `filter` option
+
+Type: string | Function
+
+Default Value:
+
+Selectors that do not lead to dragging (String or Function)
+
+---
+
+#### `preventOnFilter` option
+
+Type: boolean
+
+Default Value: true
+
+---
+
+#### `animation` option
+
+Type: number
+
+Default Value: 0
+
+---
+
+#### `easing` option
+
+Type: string | function
+
+Default Value:
+
+Easing for animation. Defaults to null. See https://easings.net/ for examples. For other possible values, see https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp
+
+---
+
+#### `dataIdAttr` option
+
+Type: string
+
+Default Value: "data-id"
+
+HTML attribute that is used by the `toArray()` method.
+
+---
+
+#### `delay` option
+
+Type: number
+
+Default Value: 0
+
+Time in milliseconds to define when the sorting should start
+
+---
+
+#### `delayOnTouchOnly` option
+
+Type: boolean
+
+Default Value: false
+
+Whether or not the delay should be applied only if the user is using touch (eg. on a mobile device). No delay will be applied in any other case.
+
+---
+
+#### `forceFallback` option
+
+Type: boolean
+
+Default Value: false
+
+Ignore the HTML5 DnD behaviour and force the fallback to kick in
+
+---
+
+#### `fallbackClass` option
+
+Type: string
+
+Default Value: "sortable-fallback"
+
+Class name for the cloned DOM Element when using forceFallback.
+
+---
+
+#### `fallbackOnBody` option
+
+Type: boolean
+
+Default Value: false
+
+Appends the cloned DOM Element into the Document's Body.
+
+---
+
+#### `fallbackTolerance` option
+
+Type: number
+
+Default Value: 0
+
+Specify in pixels how far the mouse should move before it's considered as a drag.
+
+---
+
+#### `fallbackOffset` option
+
+Type: { x: 0, y: 0 }
+
+Default Value: { x: 0, y: 0 }
+
+---
+
+#### `emptyInsertThreshold` option
+
+Type: number
+
+Default Value: 5
+
+Pixel distance mouse must be from empty sortable to insert drag element into it
+
+---
+
+#### `direction` option
+
+Type: undefined
+
+Default Value:
+
+Direction that the Sortable should sort in. Can be set to 'vertical', 'horizontal', or a function, which will be called whenever a target is dragged over. Must return 'vertical' or 'horizontal'. Leave blank to auto detect.
+
+---
+
+#### `touchStartThreshold` option
+
+Type: undefined
+
+Default Value:
+
+How many pixels the point should move before cancelling a delayed drag event
+
+---
+
+#### `setData` option
+
+Type: undefined
+
+Default Value:
+
+---
+
+#### `draggable` option
+
+Type: undefined
+
+Default Value: null
+
+Specifies which items inside the element should be draggable.
+
+---
+
+#### `onChoose` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Element is chosen
+
+---
+
+#### `onUnchoose` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Element is unchosen
+
+---
+
+#### `onStart` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Element dragging started
+
+---
+
+#### `onEnd` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Element dragging ended
+
+---
+
+#### `onAdd` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Element is dropped into the list from another list
+
+---
+
+#### `onUpdate` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Changed sorting within list
+
+---
+
+#### `onRemove` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Element is removed from the list into another list
+
+---
+
+#### `onFilter` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Attempt to drag a filtered element
+
+---
+
+#### `onSort` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Called by any change to the list (add / update / remove)
+
+---
+
+#### `onClone` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Called when creating a clone of element
+
+---
+
+#### `onMove` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Event when you move an item in the list or between lists
+
+---
+
+#### `onChange` option
+
+Type: fn(event: SortableEvent) => void
+
+Default Value:
+
+Called when dragging element changes position
+
+---
